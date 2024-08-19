@@ -1,5 +1,5 @@
 const express = require("express");
-require('dotenv').config({ path: './llave.env' });
+
 
 const usuariosEstadoSchema  = require("../models/usu_cat_estado")
 const router = express.Router();

@@ -1,8 +1,8 @@
 const express = require("express");
 const mongoose = require("mongoose");
-require('dotenv').config({ path: './llave.env' });
 
-const servmongo = process.env.DB_MONGO;
+
+const servmongo = 'mongodb+srv://aldair:1234@cluster0.6aed6jv.mongodb.net/';
 const usuariosRutasch = require('./routes/usu_usuarios_ch');
 const scannerRutasch = require('./routes/contro_horario');
 const usuarioTipoxh = require('./routes/usu_tipo_usuarios');
@@ -13,7 +13,7 @@ const usuarioEstadoxh = require('./routes/usu_estado_usuarios');
 const cors = require('cors');
 
 const app = express();
-const port = process.env.PORT || 9000;
+const port = 9000;
 const dbName = 'AppScanner';
 
 
@@ -32,8 +32,6 @@ app.use('/api', usuarioEstadoxh);
 mongoose.connect(/* llave para acceder a bd*/ servmongo)
 .then(() => {
     console.log('Conectado a Mongo');
-    const db = mongoose.connection.db; // Obtener la base de datos desde la conexión de Mongoose
-    console.log(`Usando la base de datos "${dbName}"`);
 })
 .catch((error)=> console.error);
 

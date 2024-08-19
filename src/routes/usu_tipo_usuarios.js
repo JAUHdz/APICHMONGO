@@ -1,5 +1,5 @@
 const express = require("express");
-require('dotenv').config({ path: './llave.env' });
+
 
 const UsuusuariosTipoSchema  = require("../models/usu_tipo_usuarios")
 const router = express.Router();

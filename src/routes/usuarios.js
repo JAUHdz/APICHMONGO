@@ -1,7 +1,7 @@
 const express = require("express");
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcrypt'); // para hashear las contraseñas
-require('dotenv').config({ path: './llave.env' });
+
 
 
 const usuariosSchema = require("../models/usuarios")

@@ -1,5 +1,5 @@
 const express = require("express");
-require('dotenv').config({ path: './llave.env' });
+
 
 const ControlHorarioSchema  = require("../models/control_horario")
 const router = express.Router();
