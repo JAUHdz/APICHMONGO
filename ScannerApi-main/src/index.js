@@ -3,12 +3,12 @@ const mongoose = require("mongoose");
 require('dotenv').config({ path: './llave.env' });
 
 const servmongo = process.env.DB_MONGO;
-const usuariosRutas = require('./routes/usuarios');
-const scannerRutas = require('./routes/scanner');
-const usuarioTipo = require('./routes/usu_cat_tipo_usuario');
-const usuarioEstado = require('./routes/usu_cat_estado');
-const usuUsuarios = require('./routes/usu_usuario');
-const catAditivos = require('./routes/cat_aditivos');
+const usuariosRutasch = require('./routes/usu_usuarios_ch');
+const scannerRutasch = require('./routes/contro_horario');
+const usuarioTipoxh = require('./routes/usu_tipo_usuarios');
+const usuarioEstadoxh = require('./routes/usu_estado_usuarios');
+
+
 
 const cors = require('cors');
 
@@ -21,12 +21,11 @@ const dbName = 'AppScanner';
 app.use(cors());
 
 app.use(express.json());
-app.use('/api', usuariosRutas);
-app.use('/api', scannerRutas);
-app.use('/api', usuarioTipo);
-app.use('/api', usuarioEstado);
-app.use('/api', usuUsuarios);
-app.use('/api', catAditivos);
+app.use('/api', usuariosRutasch);
+app.use('/api', scannerRutasch);
+app.use('/api', usuarioTipoxh);
+app.use('/api', usuarioEstadoxh);
+
 
 //mongo db conection
 
